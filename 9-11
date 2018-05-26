@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>静态页面实战？</title>
+	<style type="text/css">
+		body {
+			padding: 0;margin:0;
+			position: relative;
+			font-family: Segoe UI;
+		}
+		.helloworld {
+			width: 100%;
+			height: 989px;
+			background: url(bj1.gif) no-repeat;
+			-webkit-background-size: 100% 989px;
+			background-size: 100% 989px;
+			position: relative;
+		}
+		/* 第一层的背景并没有直接用出来，我从psd文件中看出这张背景实际是两张图片组成的 */
+		.HW {
+			font-size: 60px;
+			width: 342px;
+			line-height: 56px;
+			margin: 0px auto;
+			position: absolute;
+			top: 207px;
+			left: 50%;
+			margin-left: -171px;
+			color: white;
+		}
+		.HC {
+			font-size: 20px;
+			width: 688px;
+			line-height: 34px; 
+			position: absolute;
+			top: 341px;
+			left: 50%;
+			margin-left: -344px;
+			color: white;
+		}
+		.anbox {
+			width: 968px;
+			height: 248px;
+			border: 1px solid #5D5956;
+			position: absolute;
+			top: 528px;
+			left: 50%;
+			margin-left: -484px;
+		}
+		.create {
+			font-size: 18px;
+			margin-top: 60px;
+			margin-left: 392px;
+			color: white;
+		}
+		.it {
+			font-size: 14px;
+			margin:18px 0 44px 403px;
+			color: #736D5F;
+		}
+		.loading{
+			margin-left: 100px;
+		}
+		li {
+			float: left;
+			margin-right: 30px;
+			list-style: none;
+			width: 292px;
+			height: 50px;
+			border: 1px solid #5D5956;
+		}
+		input {
+			border: 0px;
+			background: none;
+			padding: 15px 0 0 20px;
+			font-size: 14px;
+		}
+		.input_1 input{
+			color: white;
+		}
+		.input_2 input {
+			color: #736D5F;
+		}
+		.input_3 {
+			width: 125px;
+			background: white;
+			border-radius: 6px;
+		}
+		/* 第一部分制作完成，再放大和缩小的基础上有点不是很合适，很伤心，是屏幕比例问题，100%的屏幕看上去没有问题，但是其实问题有点大。 */
+		/* 最主要的三个盒子应该设置一样的宽度，不能设置不一样的，缩小的时候就会不一样 */
+		.boatloads {
+			background: #FFF;
+			text-align: center;
+			height: 710px;
+		}
+		.headline {
+			font-size: 15px;
+			text-align: center;
+			margin: 86px 0 40px 0;
+		}
+		.litterline {
+			font-size: 38px;
+			text-align: center;
+			width: 660px;
+			position: absolute;
+			left: 50%;
+			margin-left: -330px;
+		}
+		.intro {
+			position: relative;
+		}
+		.firstU {
+			text-align: center;
+			width: 1030px;
+			height: 346px;
+			margin-top: 212px;
+			position: absolute;
+			left: 50%;
+			margin-left: -515px;
+		}
+		.firstU li {
+			border: none;
+			float: left;
+			width: 515px;
+			height: 173px;
+			margin: 0;
+			position: relative;
+		}
+		.firstU li em {
+			display: block;
+			width: 60px;	
+		}
+		.firstU li h3 {
+			font-size: 20px;
+			text-align: left;
+			position: absolute;
+			top: -16px;
+			left: 86px;
+		} 
+		.firstU li p {
+			font-size: 18px;
+			width: 405px;
+			text-align: left;
+			position: absolute;
+			top: 24px;
+			left: 86px;
+		}
+		.clear {
+			clear: both;
+		}
+		/* 结束第二部分 */
+		.supporitive {
+			height: 800px;
+			width: 100%;
+			background: url(sc1.gif) no-repeat;
+			background-size: 100% 800px;
+			position: relative;
+		}
+		.suppor {
+			width: 404px;
+			font-size: 45px;
+			color: white;
+			padding: 173px 0 45px 316px; 
+		}
+		.CW {
+			width: 400px;
+			font-size: 20px;
+			color: #C0C7B7;
+			padding: 0px 0px 0px 316px; 
+			/* word-break: break-all;
+			word-wrap:break-word; */
+		}
+		.NW {
+			width: 510px;
+			height: 60px;
+			padding: 60px 0 0px 316px;
+		}
+		.NW input {
+			border: 1px solid #6B756D;
+			font-size: 14px;
+			text-align: center;
+			width: 216px;
+			line-height: 60px;
+			margin: 0 30px 0 0;
+			padding: 0px;
+			border-radius: 6px
+		}
+		.input_4 {
+			background: white;
+			color: black;
+		}
+		.input_5 {
+			color: white;
+		}
+		.Wpane {
+			height: 602px;
+			width: 1000px;
+			border: 1px solid #928E8F;
+			border-radius: 40px 0 0 40px;
+			position: absolute;
+			top: 100px;
+			left: 60%;
+		}
+		.circle {
+			width: 12px;
+			height: 12px;
+			border: 1px solid #928E8F;
+			border-radius: 6px;
+			position: absolute;
+			top: 400px;
+			left: 60%;
+			margin-left: 30px;
+		}
+		.Npane {
+			height: 541px;
+			width: 800px;
+			border: 1px solid #928E8F;
+			position: absolute;
+			top: 130px;
+			left: 60%;
+			margin-left: 60px;
+			background: url(sc.gif) no-repeat;
+		}
+		/* 结束第三部分，最后的Npane是整个图片放上去的，没有做细节处理，
+		因为在psd原图上找不到我需要的东西，无法做的更加细节 */
+		.title {
+			font-size: 40px;
+			text-align: center;
+			margin: 100px 0 120px 0;
+		}
+		.Hero ul {
+			height: 355px;
+			border-bottom: 1px solid #EAEAEA;
+			display: flex;
+			flex-flow:row nowrap;
+			justify-content: center;
+		}
+		.Hero ul li {
+			list-style: none;
+			border: none;
+			margin-right: 90px;
+		}
+		.Hero ul li em {
+			display: block;
+			text-align: center;
+		}
+		.Hero ul li p {
+			text-align: center;
+			margin-top: 30px;
+		}
+		/*第四部分咋文字的处理上没有很成功，因该是因为字体的原因。*/
+		.page{
+			border-bottom: 1px solid #EAEAEA;
+			position: relative;
+			text-align: center;
+			height: 1000px;
+		}
+		.LJ {
+			height: 350px;
+			width: 972px;
+			margin: 114px 0 80px 0;
+			padding: 0px;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -486px;
+		}
+		.LJ li {
+			border: none;
+			text-align: center;
+		}
+		.img1 {
+			width: 572px;
+			height: 348px;
+			background: url(bj2.jpg) no-repeat;
+		}
+		.LJ h3 {
+			font-size: 20px;
+			font-weight: bold;
+			text-align: left;
+		}
+		.LJ p {
+			font-size: 16px;
+			color: #545454;
+			text-align: left;
+		}
+		.word1 {
+			margin-left: 48px;
+		}
+		.word2 {
+			margin-right: 78px;
+		}
+		.img2 {
+			width: 572px;
+			height: 348px;
+			background: url(bj3.jpg) no-repeat;
+		}
+		.CD {
+			height: 350px;
+			width: 972px;
+			margin: 0px 0 106px 0px;
+			padding: 0px;
+			position: absolute;
+			top: 542px;
+			right: 50%;
+			margin-right:-486px; 
+		}
+		.CD li {
+			float: right;
+			border: none;
+			text-align: center;
+		}
+		.CD h3 {
+			font-size: 20px;
+			font-weight: bold;
+			width: 325px;
+			text-align: left;
+		}
+		.CD p {
+			font-size: 16px;
+			color: #545454;
+			text-align: left;
+		}
+		.crew {
+			position: relative;
+			height: 1084px;
+			border-bottom: 1px solid #EAEAEA;
+		}
+		.OA {
+			text-align: center;
+			margin: 90px 0 30px 0;
+			font-size: 60px;
+		}
+		.OU {
+			text-align: center;
+			font-size: 30px;
+			margin: 0 430px 58px 430px;
+		}
+		.OF ul {
+			height: 710px;
+			width: 970px;
+			padding: 0px;
+			position: absolute;
+			left: 50%;
+			margin-left: -485px;
+		}
+		.OF ul li {
+			width: 470px;
+			height: 341px;
+			border: none;
+			margin:0 30px 30px 0;		
+		}
+		.OF ul .li2 {
+			margin-right: 0px;
+		}
+		.OF ul .li4 {
+			margin-right: 0px;
+		}
+			/* 第五部分结束 */
+		.loading {
+			height: 700px;
+			position: relative;
+		}
+		.load {
+			border:1px solid #E9E9E9;
+			width: 468px;
+			height: 560px;
+			margin: 70px 129px 0 0; 
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left:-534px;
+		}
+		.load h3 {
+			text-align: center;
+			font-size: 20px;
+			margin-bottom: 50px;
+		}
+		.load input {
+			border: 1px solid #D4D4D4;
+			width: 368px;
+			height: 50px;
+			margin: 0 50px;
+			margin-bottom: 32px;
+			color: #868686;
+			text-align: left;
+			text-align: left;
+			padding: 11px 0 0px 20px;
+		}
+		.load .input_8 {
+			height: 14px;
+			padding: 11px 0 131px 20px;
+		}
+		.load .input_9 {
+			text-align: center;
+			padding:0px;
+			width: 390px;
+			height: 50px;
+			background: black;
+			color: white;
+		}
+		.more {
+			position: absolute;
+			left: 50%;
+			width: 468px;
+			height: 560px;
+			margin: 70px 0px 0 100px;
+		}
+		.more h3 {
+			font-size: 45px;
+			margin: 0 0 34px 0;
+		}
+		.more p {
+			line-height: 21px;
+			color: #ACACAC;
+			width: 340px;
+			margin: 0 0 70px 0;
+		}
+		.more ul {
+			padding: 0;
+			margin: 0;
+		}
+		.more ul li {
+			border: none;
+			float: none;
+			width: 300px;
+			margin-bottom: 38px;
+			position: relative;
+		}
+		.more ul li em {
+			display: block;
+			width: 24px;
+			text-align: left;
+		}
+		.more ul li p {
+			position: absolute;
+			width: 222px;
+			left:38px; 
+			top:0px;
+		}
+		.footer {
+			height: 412px;
+			width: 100%;
+			background: #141414;
+			display: flex;
+			justify-content: center;
+			flex-flow:row nowrap;
+		}
+		.footer ul {
+			margin: 0;
+			padding: 0;
+			width: 200px;
+			height: 412px;
+			float: left;
+			margin-right: 100px;
+		}
+		.footer ul #lis1 {
+			color: white;
+			font-size: 14px;
+			margin: 87px 0 30px 0;
+		}
+		.footer ul li{
+			border: none;
+			color: #575757;
+			margin: 0px 0 30px 0;
+			height: 17px;
+			width: 241px;
+			font-size: 16px;
+		}
+		.footer .Enjoy .lisimg{
+			position: relative;
+			margin-top: 40px;
+		}
+	/* 	.footer .Enjoy .lisimg li {
+		width: 40px;
+		height: 40px;
+	} */
+		.footer .Enjoy .lisimg .lisimg1 {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.footer .Enjoy .lisimg .lisimg2 {
+			position: absolute;
+			top: 0px;
+			left: 41px;
+		}
+		.footer .Enjoy .lisimg .lisimg3 {
+			position: absolute;
+			top: 0px;
+			left: 84px;
+		}
+		.footer .Enjoy .lisimg .lisimg4 {
+			position: absolute;
+			top: 0px;
+			left: 135px;
+		}
+		.footer .Enjoy .lisimg .lisimg5 {
+			position: absolute;
+			top: 0px;
+			left: 176px;
+		}
+		.footer .Enjoy .lisimg .lisimg6 {
+			position: absolute;
+			top: 0px;
+			left: 217px;
+		}
+	</style>
+</head>
+<body>
+	<div class="helloworld">
+		<div class="HW">Hello World</div>
+		<div class="HC">China is speeding up strategic plan, standards, traffic rules, laws and regulations on accident-incurred liabilities for its smart car industry, Economic Information Daily reported Thursday.</div>
+		<div class="anbox">
+			<div class="create">CREATE YOUR ACCOUNT</div>
+			<div class="it">IT IS ABSOLUTELY FREE</div>
+			<div class="loading">
+				<li class="input_1"><input type="text"value="denis@getcrafwork.com"></li>
+				<li class="input_2"><input type="text"value="Create your password"></li>
+				<li class="input_3"><input type="submit" value="SIGN UP"></li>
+			</div>
+		</div>
+	</div>
+	<div class="boatloads">
+		<div class="headline">BOATLOADS OF AWESOME</div>
+		<div class="litterline">Ready-made,customizable,HTML landing page sections</div>
+		<div class="intro">
+			<ul class="firstU">
+				<li class="lileft">
+					<em>
+						<img src="icon1.jpg">
+					</em>
+					<h3>Mobile First</h3>
+					<p>All modulz are built mobile-
+						first for maximum device compatibil
+					</p>
+				</li>
+				<li class="liright">
+					<em>
+						<img src="icon2.jpg">
+					</em>
+					<h3>Accessibility</h3>
+					<p>Support for IE8, mobile and
+					 tablet devices, screenreaders and c
+					</p>
+				</li>
+				<li class="lileft">
+					<em>
+						<img src="icon3.jpg">
+					</em>
+					<h3>Fluid Typography</h3>
+					<p>On different screen sizes,
+					 fonts automagically scale with the viewport
+					</p>
+				</li>
+				<li class="liright">
+					<em>
+						<img src="icon4.jpg">
+					</em>
+					<h3>Customization</h3>
+					<p>Make any design your own 
+						using the Style Editor. Personalize font color,and layouts to create the custom look you want
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- 结束第二部分 -->
+	<div class="supporitive">
+		<div class="suppor">Supportive policies for China's smart car</div>
+		<div class="CW">China will come up with its own smart car standards,traffic rules,laws and refulations relating to safety,according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles</div>
+		<div class="NW">
+			<input type="text" value="CHECK CUT FEATURES" class="input_4">
+			<input type="text" value="TRY PRODUCT FOR FREE" class="input_5">
+		</div>
+		<div class="show">
+			<div class="Wpane"></div>
+			<div class="circle"></div>
+			<div class="Npane"></div>
+		</div>
+	</div>
+	<!-- 第三部分结束 -->
+	<div class="products">
+		<div class="title">Try Our Awesome Products</div>
+		<div class="Hero">
+			<ul>
+				<li>
+					<em>
+						<img src="sing.jpg" alt="">
+					</em>
+					<p>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee,said that China will also launch design guidance for smart cars,smart map architecture and standards for text grounds</p>
+				</li>
+				<li>
+					<em>
+						<img src="hero.jpg" alt="">
+					</em>
+					<p>Li said the smart car industry is able to enlarge the current car industry by I trillion yuan ($158.15 billion) and also able to boost fast development in 5G.internet of cars,big data artificial intelligence and new-energy vehicies</p>
+				</li>
+				<li>
+					<em>
+						<img src="pont.jpg" alt="">
+					</em>
+					<p>Zhang Junyi, a partner with NIO Capital, said that the smart car is the trend for the car industry and China's auto sector will usher in a new key development stage with the improvement of infrastructure,txchnology.policies and laws.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 第四部分结束 -->
+	<div class="page">
+		<ul class="LJ">
+			<li class="img1"></li>
+			<li class="word1">
+				<h3>Learn How to Improve Your Personal Business</h3>
+				<p>
+					Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee,said that China will also launch design guidance for smart cars,smart map architecture and standards for text grounds
+				</p>
+			</li>
+		</ul>
+		<ul class="CD">
+			<li class="img2"></li>
+			<li class="word2">
+				<h3>Choose Between Two Beautifully Designed Color Schemes.</h3>
+				<p>
+					China will come up with its own smart car standards, traffic rules,laws and regulation relating to safely, according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles.
+				</p>
+			</li>
+		</ul>
+	</div>
+	<div class="crew">
+		<div class="OA">Our Awesome Crew</div>
+		<div class="OU">Our unique online teaching style makes learning easy for everyone.Whether you are trying to land a new job,brush up on you skills</div>
+		<div class="OF">
+			<ul>
+				<li class="li1"><img src="bj4.jpg" alt=""></li>
+				<li class="li2"><img src="bj5.jpg" alt=""></li>
+				<li class="li3"><img src="bj6.jpg" alt=""></li>
+				<li class="li4"><img src="bj7.jpg" alt=""></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 第五部分结束 -->
+	<div class="loading">
+		<div class="load">
+			<h3>Fell free to Write Us</h3>
+			<input type="text" value="E-mail" class="input_6">
+			<input type="text" value="Subject" class="input_7">
+			<input type="text" value="Message" class="input_8">
+			<input type="submit" value="SEND" class="input_9"> 
+		</div>
+		<div class="more">
+			<h3>Contacts</h3>
+			<p>Make any design your own using the Style Editor. Personalize font, colors,and layouts to create the custom look you want.</p>
+			<ul>
+				<li>
+					<em>
+						<img src="icon1.gif" alt="">
+					</em>
+					<p>360 King Street</br>Feastrvale Trevose, PA 19057</p> 
+				</li>
+				<li>
+					<em>
+						<img src="icon2.gif" alt="">
+					</em>
+					<p>(755) 564-84-12</p> 
+				</li>
+				<li>
+					<em>
+						<img src="icon3.gif" alt="">
+					</em>
+					<p>youname@mail.com</p> 
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer">
+		<div>
+			<ul>
+				<li id="lis1">LEARN MORE</li>
+				<li>How it work?</li>
+				<li>Meeting tools</li>
+				<li>Live Strwaming</li>
+				<li>Contact method</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li id="lis1">LEARN MORE</li>
+				<li>How it work?</li>
+				<li>Meeting tools</li>
+				<li>Live Strwaming</li>
+				<li>Contact method</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li id="lis1">LEARN MORE</li>
+				<li>How it work?</li>
+				<li>Meeting tools</li>
+				<li>Live Strwaming</li>
+				<li>Contact method</li>
+			</ul>
+		</div>
+		<div class="Enjoy">
+			<ul>
+				<li id="lis1">ENJOY YOUR LIFE</li>
+				<li>
+					Great web UI kit for designers,freelancers or businness.
+				</li>
+				<ul class="lisimg">
+					<li class="lisimg1"><img src="twitter1.jpg" alt=""></li>
+					<li class="lisimg2"><img src="facebook.jpg" alt=""></li>
+					<li class="lisimg3"><img src="goolge.jpg" alt=""></li>
+					<li class="lisimg4"><img src="twitter2.jpg" alt=""></li>
+					<li class="lisimg5"><img src="weibo.jpg" alt=""></li>
+					<li class="lisimg6"><img src="ins.jpg" alt=""></li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>
+<!-- 最后说明，图片没办法加载，不好意思了 -->
