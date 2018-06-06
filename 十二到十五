@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>静态项目实战2</title>
+	<style type="text/css">
+		.body {
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			font-family: Proxima Nova Semibold;
+		}
+		.AN {
+			width: 100px;
+			height: 100%;
+			background-color: #1D2530;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		.AN div {
+			border: none;
+			width: 60px;
+			height: 60px;
+			border-radius: 30px;
+			text-align: center;
+		}
+		.circle1 {
+			position: fixed;
+			background-color: #2298EF;
+			top: 20px;
+			left: 20px;
+		}
+		.circle2 {
+			position: fixed;
+			background-color: #937EE2;
+			top: 100px;
+			left: 20px;
+		}
+		.circle3 {
+			position: fixed;
+			background-color: #D23114;
+			top: 180px;
+			left: 20px;
+		}
+		.AN div.circle4 {
+			width: 50px;
+			height: 50px;
+			position: fixed;
+			border: 5px solid #455672;
+			background-color: #1D2530;
+			top: 260px;
+			left: 20px;
+		}
+		.AN div img {
+			width: 30px;
+			height: 30px;
+			margin:15px;
+		}
+		.AN div.circle4 img {
+			margin: 10px;
+		}
+		.AN .proground {
+			position: fixed;
+			bottom: 20px;
+			left: 26px;
+			width: 16px;
+			height: 16px;
+		}
+		.AN .proground img {
+			width: 16px;
+			height: 16px;
+			margin: 0px;
+		}
+		.AN .shezhi {
+			position: fixed;
+			bottom: 20px;
+			left: 58px;
+			width: 16px;
+			height: 16px;
+		}
+		.AN .shezhi img {
+			width: 16px;
+			height: 16px;
+			margin: 0px; 
+		}
+		/* 第一左边栏完成 */
+		.menu {
+			position: fixed;
+			top: 0px;
+			left: 100px;
+			background-color: #212C3B;
+			width: 250px;
+			height: 100%;
+		}
+		.menu .gelan {
+			background-color: #2A3546;
+			height: 1px;
+			width: 190px;
+			margin:0 30px;
+		}
+		.menu ul .firsttd {
+			color: #5B6779;
+			line-height: 18px;
+			margin: 30px 50px 21px 0;
+			position: relative;
+		}
+		.menu ul .sales {
+			position: relative;
+		}
+		.menu ul .sales div {
+			width: 32px;
+			line-height: 24px;
+			position: absolute;
+			top: 0;
+			right: 30px;
+			background-color: #2198EF;
+			color: #FFF;
+			border-radius: 11px 10px;
+			text-align: center;
+		}
+		.menu .bashboard .sales #gd {
+			width: 24px;
+			line-height: 24px;
+			background-color: #DC3B1F;
+			border-radius: 12px;
+		}
+		.menu ul li {
+			width: 210px;
+			margin-bottom: 25px;
+			list-style: none;
+			color: #798391;
+		}
+		.menu ul li i {
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			top: 0px;
+			right: 30px;
+		}
+		.menu ul li i img {
+			width: 16px;
+			height: 16px;
+		}
+		#Monthly-Goals .Monthly-Goals {
+			position: fixed;
+			bottom: 37px;
+			left: 130px;
+			font-size: 12px;
+			color: #FFF;
+		}
+		#Monthly-Goals i {
+			position: fixed;
+			bottom: 37px;
+			left: 240px;
+			font-size: 12px;
+			color: #FFF;
+		}
+		.menu .jindut1 {
+			position: fixed;
+			bottom: 23px;
+			left: 130px;
+			width: 190px;
+			height: 4px;
+			background-color: #2C3747;
+			border-radius: 1px;
+		}
+		.menu .jindut2 {
+			position: fixed;
+			bottom: 23px;
+			left: 130px;
+			width: 40px;
+			height: 4px;
+			background-color: #927DE2;
+			border-radius: 1px;
+		}
+		/* 第二部分完成 */
+		.Messages {
+			position: fixed;
+			top: 0;
+			left: 350px;
+			width: 100%;
+			height: 80px;
+			border-bottom: 1px solid #ECEFF0;
+		}
+		.Messages h1 {
+			font-size: 24px;
+			text-align: left;
+			margin: 31px 0 31px 31px;
+		}
+		.Messages em {
+			position: fixed;
+			display: block;
+			width: 50px;
+			height: 50px;
+			border-radius: 24px;
+			top: 14px;
+			right: 182px;
+			background: url(sitefan.jpg) no-repeat;
+			background-size: 50px 50px;
+		}
+		.Messages .i1 {
+			position: fixed;
+			top: 24px;
+			right: 90px;
+			color: #2399F1;
+			font-size: ;
+			font-family: System;
+		}
+		.Messages .i2 {
+			position: fixed;
+			top: 45px;
+			right: 65px;
+			color: #B5B5B5;
+		}
+		.Messages .scircle{
+			display: block;
+			width: 14px;
+			height: 14px;
+			border: 3px solid white;
+			border-radius: 10px;
+			background-color: #38A669;
+			position: fixed;
+			top: 46px;
+			right: 186px;
+		} 
+		.Messages .i3 {
+			position: fixed;
+			top: 38px;
+			right: 31px;
+			color: #BFC7D7;
+		}
+		/* Messages部分结束 */
+		.link {
+			position: fixed;
+			top: 80px;
+			left: 350px;
+			width: 400px;
+			height: 100%;
+			border-right: 1px solid #ECEFF0;
+		}
+		.link ul {
+			padding: 0px;
+			margin: 0px;
+		}
+		.link ul li {
+			list-style: none;
+			height: 129px;
+			border-bottom: 1px solid #ECEFF0;
+			padding-left: 30px;
+			padding-right: 23px;
+		}
+		.link ul .search {
+			border-bottom: 1px solid #ECEFF0;
+			height: 69px;
+			position: relative;
+		}
+		.link ul .search input {
+			text-align: left;
+			width: 340px;
+			height: 34px;
+			margin: 16px 30px 20px 0px;
+			border: 1px solid black;
+			color: #9fa9ba;
+			outline: none;
+			/* -webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none; */
+		}
+		/* 去掉Google的search的叉号 */
+			input::-webkit-search-cancel-button{
+		    display: none;
+		}
+			/* --清除IE下的 search 叉号 */
+			input[type=search]::-ms-clear{
+		    display: none;
+		}
+		/* .link ul .search input[type=search]::-webkit-input-placeholder{
+		    		color: blue;
+		} */
+		.link ul .search i {
+			display: block;
+			width: 44px;
+			height: 33px;
+			position: absolute;
+			background: url(搜索.png) no-repeat;
+			-webkit-background-size: 14px 17px;
+			background-size: 14px 17px;
+			background-position: 50% 50%;
+			top: 16px;
+			right: 30px;
+		}
+		.link ul li:nth-child(2){
+			border-left: 3px solid #2399F1;
+		}
+		.link ul .litop {
+			height: 46px;
+			margin: 15px 0 13px 0px;
+			color: #B5B5B5;
+		}
+		.link ul .litop .litop_left {
+			width: 46px;
+			height: 46px;
+			margin-right: 20px;
+			float: left;/* 这里让这个盒子浮动，是他不在标准文档流里面，所以后面litop_right可以上去，解决这个块级元素占据一行的问题 */
+		}
+		.link ul .litop .litop_left img {
+			width: 46px;
+			height: 46px;
+			border-radius: 23px 23px 23px 23px;
+		}
+		.link ul .litop .litop_right {
+			width: 323px;
+			height: 46px;
+		}
+		.link ul .litop .litop_rightUp {
+			font-size: 18px;
+			position: relative;
+		}
+		.link ul .litop .litop_rightUp .rightcricle {
+			width: 8px;
+			height: 8px;
+			border-radius: 4px;
+			line-height: 18px;
+			background-color: #00A9FF;
+			margin-left: 67px;
+			display: block;
+			position: absolute;
+			top: 30%;
+			left: 0px;
+		}
+		.link ul .litop .litop_rightUp div{
+			margin-left: 68px;
+			color: #585D68;
+		}
+		.link ul .litop .litop_rightUp #litop_rightname {
+			color: #00A9FF;
+			margin-left:82px;
+		}
+		.link ul .litop .litop_right span:nth-child(2) {
+			font-size: 14px;
+		}
+		.link ul .litop .litop_rightUp .distance {
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			color: #7F8FA4;
+		}
+		.link ul .libottom {
+			height: 55px;
+			position: relative;
+		}
+		.link ul .libottom #p {
+			font-size: 12px;
+			color: #585D68;
+			width: 268px;
+			line-height: 20px;
+		}
+		.link ul .libottom .readhead {
+			width: 347px;
+			font-size: 12px;
+			color: #585D68;
+			line-height: 20px;
+			overflow: hidden;
+		}
+		.link ul .libottom .readnum {
+			display: block;
+			width: 24px;
+			line-height: 24px;
+			border-radius: 12px;
+			background-color: #269BF2;
+			text-align: center;
+			color: #FFF;
+			position: absolute;
+			right: 0px;
+			top: 50%;
+			margin-top: -12px;
+		}
+		.moremessage {
+			position: fixed;
+			top: 80px;
+			left: 750px;
+			width: 100%;
+			overflow: auto;
+			float: left;
+		}
+		.moremessage .linehead {
+			height: 69px;
+			border-bottom: 1px solid #ECEFF0;
+			position: relative;
+		}
+		.moremessage .linehead .name {
+			margin:28px 0 31px 28px;
+			color: #72767F;
+			font-size: 18px;
+			float: left;
+		}
+		.moremessage .linehead .bluecircle {
+			width: 8px;
+			height: 8px;
+			background-color: #1BB833;
+			border-radius: 4px 4px 4px 4px;
+			display: block;
+			position: absolute;
+			top: 35px;
+			left: 138px;
+		}
+		.moremessage .linehead .rightline {
+			width: 300px;
+			position: fixed;
+			top: 97px;
+			right: 20px;
+			padding: 0;
+			margin: 0px;
+		}
+		.moremessage .linehead .rightline li {
+			float: left;
+			list-style: none;
+			border: 1px solid #CDCFD9;
+		}
+		.moremessage .linehead ul .lis1{
+			width: 33px;
+			height: 28px;
+			border-radius: 2px 0 0 2px;
+			background: url(加好友.png) no-repeat;
+			-webkit-background-size: 16px 16px;
+			background-size: 16px 16px;
+			background-position: 50% 50%;
+		}
+		.moremessage .linehead ul .lis2{
+			width: 34px;
+			height: 28px;
+			border-radius: 2px 0 0 2px;
+			border-left: none;
+			background: url(上传.png) no-repeat;
+			-webkit-background-size: 16px 16px;
+			background-size: 16px 16px;
+			background-position: 50% 50%;
+		}
+		.moremessage .linehead ul .lis3{
+			width: 34px;
+			height: 28px;
+			border-radius: 2px 0 0 2px;
+			border-left: none;
+			background: url(垃圾.png) no-repeat;
+			-webkit-background-size: 16px 16px;
+			background-size: 16px 16px;
+			background-position: 50% 50%;
+		}
+		.moremessage .linehead ul .lis4{
+			width: 1px;
+			height: 30px;
+			margin: 0 0px 0 23px;
+			background-color: #F0F1F4;
+			border: none;
+		}
+		.moremessage .linehead ul .lis5{
+			width: 78px;
+			line-height: 30px;
+			border: none;
+			color: #56688A;
+			text-align: center;
+			font-size: 14px;
+		}
+		.moremessage .linehead ul .lis5 a{
+			text-decoration: none;
+			cursor: pointer;
+			color: #56688A; 
+		}
+		.moremessage .linehead ul .lis6{
+			width: 33px;
+			height: 28px;
+			border-radius: 2px 0 0 2px;
+			background: url(左.png) no-repeat;
+			-webkit-background-size: 16px 16px;
+			background-size: 16px 16px;
+			background-position: 50% 50%;
+		}
+		.moremessage .linehead ul .lis7{
+			width: 34px;
+			height: 28px;
+			border-radius: 2px 0 0 2px;
+			border-left: none;
+			background: url(右.png) no-repeat;
+			-webkit-background-size: 16px 16px;
+			background-size: 16px 16px;
+			background-position: 50% 50%;
+		}
+		.moremessage .linecontent1 {
+			height: 309px;
+			border-bottom: 1px solid #9FA9B9;
+			position: relative;
+			margin-bottom: 20px;
+		}
+		.moremessage .linecontent2 {
+			height: 371px;
+			border-bottom: 1px solid #9FA9B9;
+			position: relative;
+			margin-bottom: 20px;
+		}
+		.moremessage .linecontent1 .linepg2 {
+			position: absolute;
+			top: 115px;
+			left: 129px;
+		}
+		.moremessage .linecontent1 .pgimg {
+			margin: 25px 0 0 -98px;
+			background: url(wondeful.jpeg) no-repeat;
+			-webkit-background-size: 46px 46px;
+			background-size: 46px 46px;
+			display: block;
+			width: 46px;
+			height: 46px;
+			border-radius: 23px 23px 23px 23px;
+			float: left;
+		} 
+		.moremessage .linecontent1 .pgpro {
+			margin-top: 30px;
+			margin-left: -31px;
+			float: left;
+			position: relative;
+		}
+		.moremessage .linecontent1 .pgpro .likename {
+			font-size: 16px;
+			color: #5D616C;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 90px;
+		}
+		.moremessage .linecontent1 .pgpro .liketime {
+			font-size: 14px;
+			color: #7F8FA4;
+			margin-top: 1px;
+			position: absolute;
+			top: 2px;
+			left: 100px;
+			display: block;
+			width: 100px;
+		}
+		.moremessage .linecontent1 .pgpro p {
+			word-wrap: break-word;
+			white-space: normal;
+			width: 787px;
+			margin-top: 25px;
+			font-size: 12px;
+		}
+		.moremessage .Tuesday {
+			position: absolute;
+			width: 100px;
+			line-height: 20px;
+   			text-align: center;
+   			top: 366.5px;
+   			left: 360px;
+   			z-index: 99999;
+   			background-color: #fff;
+		}
+		.moremessage .linecontent2 .linepg2 {
+			position: absolute;
+			top: 115px;
+			left: 0px;
+		}
+		.moremessage .linecontent2 .pgimg {
+			margin: 0px 0 0 30px;
+			background: url(wondeful.jpeg) no-repeat;
+			-webkit-background-size: 46px 46px;
+			background-size: 46px 46px;
+			display: block;
+			width: 46px;
+			height: 46px;
+			border-radius: 23px 23px 23px 23px;
+			float: left;
+		} 
+		.moremessage .linecontent2 .pgpro {
+			margin-top: 0px;
+			margin-left: 21px;
+			float: left;
+			position: relative;
+		}
+		.moremessage .linecontent2 .pgpro .likename {
+			font-size: 16px;
+			color: #5D616C;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 90px;
+		}
+		.moremessage .linecontent2 .pgpro .liketime {
+			font-size: 14px;
+			color: #7F8FA4;
+			margin-top: 1px;
+			position: absolute;
+			top: 2px;
+			left: 100px;
+			display: block;
+			width: 100px;
+		}
+		.moremessage .linecontent2 .pgpro p {
+			word-wrap: break-word;
+			white-space: normal;
+			width: 787px;
+			margin-top: 25px;
+			font-size: 12px;
+		}
+		.moremessage .linecontent2 .contentimg {
+			width: 500px;
+			height: 100px;
+			position: absolute;
+			bottom: 27px;
+			left: 97px;
+		}
+		.moremessage .linecontent2 .contentimg .content2img1 {
+			background: url(meijing1.jpg) no-repeat;
+			width: 156px;
+			height: 100px;
+			-webkit-background-size: 156px 100px;
+			background-size: 156px 100px;
+			border-radius: 2px;
+			margin-right: 15px;
+			float: left;
+		}
+		.moremessage .linecontent2 .contentimg .content2img2 {
+			background: url(meijing2.jpg) no-repeat;
+			width: 156px;
+			height: 100px;
+			-webkit-background-size: 156px 100px;
+			background-size: 156px 100px;
+			border-radius: 2px;
+			margin-left: 171px;
+		}
+		.moremessage .New_Message {
+			position: absolute;
+			width: 200px;
+			line-height: 20px;
+   			text-align: center;
+   			bottom: 9.5px;
+   			left: 360px;
+   			z-index: 99999;
+   			background-color: #fff;
+		}
+	</style>
+</head>
+<body class="body">
+	<div class="AN">
+		<div class="circle1"><img src="纸飞机.png" alt=""></div>
+		<div class="circle2"><img src="火箭.png" alt=""></div>
+		<div class="circle3"><img src="游戏.png" alt=""></div>
+		<div class="circle4"><img src="加号.png" alt=""></div>
+		<div class="proground"><img src="应用.png" alt=""></div>
+		<div class="shezhi"><img src="设置.png" alt=""></div>
+	</div>
+	<!-- 第一左边栏完成 -->
+	<div class="menu">
+		<ul class="firstul">
+			<li class="firsttd">
+				menu
+				<i><img src="设置.png" alt=""></i>
+			</li>
+			<li>Overciew</li>
+			<li  class="sales">
+				Sales
+				<div>54</div>
+			</li>
+			<li>Your staff</li>
+			<li>Analytics & Targeting</li>
+			<li>What's New</li>
+		</ul>
+		<div class="gelan"></div>
+		<ul>
+			<li class="firsttd">
+				YOUR PRODUCTS
+				<i><img src="设置.png" alt=""></i>
+			</li>
+			<li>Book</li>
+			<li>Tutorials</li>
+			<li>Stocks</li>
+			<li>Infographics</li>
+			<li></li>
+		</ul>
+		<div class="gelan"></div>
+		<ul class="bashboard">
+			<li class="firsttd">
+				DASHBOARD
+				<i><img src="设置.png" alt=""></i>
+			</li>
+			<li class="sales">
+				Message
+				<div>21</div>
+			</li>
+			<li>Connections</li>
+			<li  class="sales">
+				Integrations
+				<div id="gd">!</div>
+			</li>
+			<li>Account Settings</li>
+			<li>App Settings</li>
+		</ul>
+		<div id="Monthly-Goals">
+			<span class="Monthly-Goals">
+				Monthly Goals
+			</span>
+			<i>$580/$3200</i>
+		</div>	
+			<div class="jindut">
+				<div class="jindut1"></div>
+				<div class="jindut2"></div>
+			</div>
+	</div>
+	<!-- 第二左边栏完成 -->
+	<div class="Messages">
+		<h1>Messages</h1>
+		<em></em>
+		<i class="scircle"></i>
+		<i class="i1">Jordan J.</i>
+		<i class="i2">Administrator</i>
+		<i class="i3">∨</i>
+	</div>
+	<div class="link">
+		<ul class="moreli">
+			<li class="search">
+				<input type="search" value="Search">
+				<i></i>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span class="rightcricle"></span>
+							<div class="litop_rightname" id="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								3m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead" id="p">
+						I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable...
+					</p>
+					<span class="readnum">
+								4
+					</span>
+				</div>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span ></span>
+							<div class="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								8m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead">
+						Most people’s impression about a father comes from a classic article they learned in primary school. The article described a traditional father sent his son to school at the station. 
+					</p>
+					<!-- <span class="readnum">
+								4
+					</span> -->
+				</div>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span></span>
+							<div class="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								8m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead">
+						Most people’s impression about a father comes from a classic article they learned in primary school. The article described a traditional father sent his son to school at the station. 
+					</p>
+					<!-- <span class="readnum">
+								4
+					</span> -->
+				</div>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span></span>
+							<div class="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								8m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead">
+						Most people’s impression about a father comes from a classic article they learned in primary school. The article described a traditional father sent his son to school at the station. 
+					</p>
+					<!-- <span class="readnum">
+								4
+					</span> -->
+				</div>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span></span>
+							<div class="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								8m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead">
+						Most people’s impression about a father comes from a classic article they learned in primary school. The article described a traditional father sent his son to school at the station. 
+					</p>
+					<!-- <span class="readnum">
+								4
+					</span> -->
+				</div>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span></span>
+							<div class="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								8m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead">
+						Most people’s impression about a father comes from a classic article they learned in primary school. The article described a traditional father sent his son to school at the station. 
+					</p>
+					<!-- <span class="readnum">
+								4
+					</span> -->
+				</div>
+			</li>
+			<li>
+				<div class="litop">
+					<div class="litop_left">
+						<a href="#"><img src="beautiful.jpeg" alt=""></a>
+					</div>
+					<div class="litop_right">
+						<div class="litop_rightUp">
+							<span class="rightcricle"></span>
+							<div class="litop_rightname">
+								Bessie Berry
+							</div>
+							<span class="distance">
+								8m
+							</span>
+						</div>
+						<span class="setting">
+							Twitter
+						</span>
+					</div>
+				</div>
+				<div class="libottom">
+					<p class="readhead">
+						Most people’s impression about a father comes from a classic article they learned in primary school. The article described a traditional father sent his son to school at the station. 
+					</p>
+					<!-- <span class="readnum">
+								4
+					</span> -->
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 白底部分右边栏已经完成，具体细节没有细化，如果需要达到像第二个li一样的话，只要在后面把span提取出来，和在p后面加一个"id='p'",这样就可以了。 -->
+	<div class="moremessage">
+		<div class="linehead">
+			<div class="name">Bessie Berry</div>
+			<i class="bluecircle"></i>
+			<ul class="rightline">
+				<li class="lis1"></li>
+				<li class="lis2"></li>
+				<li class="lis3"></li>
+				<li class="lis4"></li>
+				<li class="lis5"> 1 / <a href="">28</a></li>
+				<li class="lis6"></li>
+				<li class="lis7"></li>
+			</ul>
+		</div>
+		<div class="linecontent1">
+			<div class="linepg1">
+				<i class="pgimg"></i>
+				<div class="pgpro">
+					<span class="likename">Bessle Berry</span>
+					<span class="liketime">8:31 AM</span>
+					<p>Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+				</div>
+			</div>
+			<div class="linepg2">
+				<i class="pgimg"></i>
+				<div class="pgpro">
+					<span class="likename">Bessle Berry</span>
+					<span class="liketime">8:31 AM</span>
+					<p>If you work as a soda jerker, you will, of course, not need much skill in expressing yourself to be effective. If you work on a machine, your ability to express yourself will be of little importance. But as soon as you move one step up from the bottom, your effectiveness depends on your ability to reach others through the spoken or the written word. And the further away your job is from manual work, the larger the organization of which you are an employee, the more important it will be that you know how to convey your thoughts in writing or speaking.</p>
+				</div>
+			</div>
+		</div>
+		<div class="Tuesday">Tuesday</div>
+		<div class="linecontent2">
+			<div class="linepg1">
+				<i class="pgimg"></i>
+				<div class="pgpro">
+					<span class="likename">Bessle Berry</span>
+					<span class="liketime">8:31 AM</span>
+					<p>Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+				</div>
+			</div>
+			<div class="linepg2">
+				<i class="pgimg"></i>
+				<div class="pgpro">
+					<span class="likename">Bessle Berry</span>
+					<span class="liketime">8:31 AM</span>
+					<p>If you work as a soda jerker, you will, of course, not need much skill in expressing yourself to be effective. If you work on a machine, your ability to express yourself will be of little importance. But as soon as you move one step up from the bottom, your effectiveness depends on your ability to reach others through the spoken or the written word. And the further away your job is from manual work, the larger the organization of which you are an employee, the more important it will be that you know how to convey your thoughts in writing or speaking. In the very large business organization, whether it is the government, the large corporation, or the Army, this ability to express oneself is perhaps the most important of all the skills a man can possess.</p>
+				</div>
+			</div>
+			<div class="contentimg">
+				<div class="content2img1" id="contentimg"></div>
+				<div class="content2img2" id="contentimg"></div>
+			</div>
+		</div>
+		<div class="New_Message">New Message</div>
+		<div class="linenew"></div>
+	</div>
+	<!-- 这一节没有做完，因为后面没什么难点而且自己挺偏的布局出了问题 -->
+</body>
+</html>
+<!-- 这一个静态页面做的很艰难，虽然一开始就是很顺，但是一到后面自己就发现出了错，对自适应页面没有更多的深究，而且自己也有很多错误，做到最后，添写了近千行代码，对知识没有具体的深究，希望自己不要再犯。对于这个练习项目，自己其实做错了，自适应在这里应该用flex布局应该更好，对于body设置100%自己不是很知道，接下来的日子一定要深究下去，多写代码，多思考，写之前一定开率仔细。 -->
