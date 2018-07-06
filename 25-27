@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        /* 输出格式变为：2008-10-10 Monday 07:10:30 PM */
+        setInterval(function(){
+                var div =document.getElementsByTagName("div")[0];
+                var today =new Date();
+                var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+                var year = today.getFullYear();
+                var month = today.getMonth();
+                var date = today.getDate();
+                var day = today.getDay();
+                var hours = today.getHours();
+                var minutes = today.getMinutes();
+                var second = today.getSeconds();
+                var time = year + "-" + (month+1) + "-" + date+ "日"  + "&nbsp"+ week[day]   + "&nbsp"+ adjunction(hours) + ":"+
+                adjunction(minutes) + ":" + adjunction(second) + "&nbsp" +timeset(hours);
+                div.innerHTML = time;
+            },1000)
+            function adjunction(str){
+                if(str>0 && str < 10){
+                    str = "0" + str;
+                }
+                return str;
+            }
+            function timeset(str) {
+                if(str>=0 && str <=12){
+                    str = "AM";
+                }else if(str >12 && str <=23){
+                    str = "PM";
+                }
+                return str;
+            }
+    </script>
+</body>
+</html>
